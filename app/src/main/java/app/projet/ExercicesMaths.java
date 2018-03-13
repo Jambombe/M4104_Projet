@@ -34,9 +34,8 @@ public class ExercicesMaths extends AppCompatActivity {
         multHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast t;
                 String s = "Répondre correctement aux multiplications de la table sélectionnée";
-                t = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
                 t.show();
             }
         });
@@ -45,9 +44,8 @@ public class ExercicesMaths extends AppCompatActivity {
         addHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast t;
                 String s = "Répondre correctement aux 10 additions";
-                t = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
                 t.show();
             }
         });
