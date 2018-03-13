@@ -24,8 +24,15 @@
         <activity
             android:name=".ExercicesMaths"
             android:label="Mathématiques" />
-        <activity android:name=".MathsMultiplications" />
-        <activity android:name=".ExercicesCultureG"></activity>
+        <activity
+            android:name=".MathsMultiplications"
+            android:label="Multiplications" />
+        <activity
+            android:name=".ExercicesCultureG"
+            android:label="Culture générale"/>
+        <activity
+            android:name=".MathsMultiplicationOpt"
+            android:label="Multiplications"/>
     </application>
 
 </manifest>
