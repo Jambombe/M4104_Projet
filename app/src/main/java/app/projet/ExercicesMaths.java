@@ -27,6 +27,16 @@ public class ExercicesMaths extends AppCompatActivity {
             }
         });
 
+        final Button addBtn = (Button) findViewById(R.id.activity_exercices_maths_addBtn);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addAct = new Intent(ExercicesMaths.this, MathsAdditions.class);
+
+                startActivity(addAct);
+            }
+        });
+
 
         ///// INFO BULLE BOUTONS D'AIDE /////
 
