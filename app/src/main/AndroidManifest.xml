@@ -10,11 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data android:name="DATABASE" android:value="sugar_example.db" />
-        <meta-data android:name="VERSION" android:value="3" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="app.projet" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="app.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="3" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="app.projet" />
 
         <activity
             android:name=".MainActivity"
@@ -40,7 +47,9 @@
         <activity
             android:name=".MathsMultiplicationOpt"
             android:label="Multiplications" />
-        <activity android:name=".MathsAdditions"></activity>
+        <activity android:name=".MathsAdditions" android:label="Additions"/>
+        <activity android:name=".CultGQCMOpt" android:label="Domaine - QCM"/>
+        <activity android:name=".CultGQcm"></activity>
     </application>
 
 </manifest>

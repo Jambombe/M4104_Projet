@@ -28,7 +28,6 @@ public class MathsAdditions extends AppCompatActivity {
         numAddition++;
 
 
-
         final Button valider = (Button) findViewById(R.id.mathsAdd_validerBtn);
 
         valider.setOnClickListener(new View.OnClickListener() {

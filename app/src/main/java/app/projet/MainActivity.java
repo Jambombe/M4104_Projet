@@ -31,5 +31,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        QuestionDAO.updateDB();
+
     }
 }
