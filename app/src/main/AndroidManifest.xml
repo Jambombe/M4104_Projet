@@ -12,10 +12,10 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="DATABASE"
-            android:value="app.db" />
+            android:value="db_app.db" />
         <meta-data
             android:name="VERSION"
-            android:value="3" />
+            android:value="1" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -25,7 +25,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="Connexion">
+            android:label="Connexion"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,9 +48,17 @@
         <activity
             android:name=".MathsMultiplicationOpt"
             android:label="Multiplications" />
-        <activity android:name=".MathsAdditions" android:label="Additions"/>
-        <activity android:name=".CultGQCMOpt" android:label="Domaine - QCM"/>
-        <activity android:name=".CultGQcm"></activity>
+        <activity
+            android:name=".MathsAdditions"
+            android:label="Additions" />
+        <activity
+            android:name=".CultGQCMOpt"
+            android:label="Domaine - QCM" />
+        <activity android:name=".CultGQcm" />
+        <activity
+            android:name=".ChoisirUser"
+            android:label="Choisir un compte" />
+        <activity android:name=".CreerCompte"></activity>
     </application>
 
 </manifest>

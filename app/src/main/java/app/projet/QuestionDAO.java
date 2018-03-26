@@ -1,6 +1,5 @@
 package app.projet;
 
-import java.util.ArrayList;
 import java.util.List;
 import app.projet.Question.Domaine;
 
@@ -56,6 +55,11 @@ public class QuestionDAO {
             Question qG4 = new Question("Combien y a-t-il de continents ? ?", "5", "3", "4", Question.Domaine.GEO);
             Question qG5 = new Question("Quel est le plus grand océan du monde ?", "Le Pacifique", "L'Atlantique", "La mer Noire", Question.Domaine.GEO);
 
+            qG1.save();
+            qG2.save();
+            qG3.save();
+            qG4.save();
+            qG5.save();
 //        }
     }
 

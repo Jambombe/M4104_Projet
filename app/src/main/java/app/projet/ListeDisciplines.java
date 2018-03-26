@@ -13,7 +13,7 @@ public class ListeDisciplines extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_disciplines);
 
-        final String pseudo = getIntent().getStringExtra(MainActivity.MAIN_ACTIVITY_PSEUDO);
+        final String pseudo = getIntent().getStringExtra(MainActivity.MAIN_ACTIVITY_PRENOM);
 
 
         final Button mathsBtn = (Button) findViewById(R.id.activity_liste_disciplines_mathsBtn);
@@ -22,7 +22,7 @@ public class ListeDisciplines extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent mathExAct = new Intent(ListeDisciplines.this, ExercicesMaths.class);
-                mathExAct.putExtra(MainActivity.MAIN_ACTIVITY_PSEUDO, pseudo);
+                mathExAct.putExtra(MainActivity.MAIN_ACTIVITY_PRENOM, pseudo);
 
                 startActivity(mathExAct);
             }
@@ -33,7 +33,7 @@ public class ListeDisciplines extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent cultGExAct = new Intent(ListeDisciplines.this, ExercicesCultureG.class);
-                cultGExAct.putExtra(MainActivity.MAIN_ACTIVITY_PSEUDO, pseudo);
+                cultGExAct.putExtra(MainActivity.MAIN_ACTIVITY_PRENOM, pseudo);
 
                 startActivity(cultGExAct);
             }

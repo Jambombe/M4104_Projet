@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_creer_compte"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="app.projet.CreerCompte">
+
+
+    <TextView
+    android:id="@+id/activity_creer_compte_prenomField"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:text="Prenom"
+    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+    android:layout_alignParentStart="true"
+    android:gravity="center"
+    android:layout_alignBottom="@+id/activity_creer_compte_prenom"/>
+
+
+    <EditText
+        android:id="@+id/activity_creer_compte_prenom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:layout_toEndOf="@+id/activity_creer_compte_prenomField" />
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Nom"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:id="@+id/activity_creer_compte_nomField"
+        android:layout_below="@+id/activity_creer_compte_prenomField"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:layout_toStartOf="@+id/activity_creer_compte_nom" />
+
+    <EditText
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/activity_creer_compte_nomField"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/activity_creer_compte_prenomField"
+        android:gravity="center"
+        android:id="@+id/activity_creer_compte_nom"/>
+
+
+
+    <Button
+        android:id="@+id/activity_creer_compte_validerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/valider"
+        android:layout_below="@+id/activity_creer_compte_nomField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" />
+
+</RelativeLayout>
+

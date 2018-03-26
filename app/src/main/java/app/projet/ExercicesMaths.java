@@ -14,14 +14,14 @@ public class ExercicesMaths extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercices_maths);
 
-        final String pseudo = getIntent().getStringExtra(MainActivity.MAIN_ACTIVITY_PSEUDO);
+        final String pseudo = getIntent().getStringExtra(MainActivity.MAIN_ACTIVITY_PRENOM);
 
         final Button multBtn = (Button) findViewById(R.id.activity_exercices_maths_multBtn);
         multBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent multAct = new Intent(ExercicesMaths.this, MathsMultiplicationOpt.class);
-                multAct.putExtra(MainActivity.MAIN_ACTIVITY_PSEUDO, pseudo);
+                multAct.putExtra(MainActivity.MAIN_ACTIVITY_PRENOM, pseudo);
 
                 startActivity(multAct);
             }
