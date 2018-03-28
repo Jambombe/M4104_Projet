@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static android.os.SystemClock.sleep;
+
 public class CreerCompte extends AppCompatActivity {
 
     @Override
@@ -25,9 +27,12 @@ public class CreerCompte extends AppCompatActivity {
 
                 User u = new User(prenom.getText().toString(), nom.getText().toString(), "image");
                 u.save();
-//                Toast t = Toast.makeText(getApplicationContext(), "Utilisateur créé avec succès !", Toast.LENGTH_LONG);
-                Toast t = Toast.makeText(getApplicationContext(), u.getPrenom(), Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(getApplicationContext(), "Utilisateur créé avec succès !", Toast.LENGTH_LONG);
+//                Toast t = Toast.makeText(getApplicationContext(), u.getPrenom(), Toast.LENGTH_LONG);
                 t.show();
+
+                sleep(3);
+                CreerCompte.super.finish(); // Terminer l'activité après création du l'utilisateur
 
             }
         });

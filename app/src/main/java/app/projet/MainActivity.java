@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent creerUserAct = new Intent(MainActivity.this, CreerCompte.class);
 
-                startActivity(creerUserAct);
+                startActivityForResult(creerUserAct, 0);
             }
         });
 
@@ -64,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
         SugarContext.init(getApplicationContext());
         schemaGenerator.createDatabase(new SugarDb(getApplicationContext()).getDB());
 
+        // Re-insérer tout les users
         for (int i = 0; i < u.size(); i++){
             u.get(i).save();
         }
 
-        QuestionDAO.updateDB();
-        UserDAO.updateDB();
+        QuestionDAO.updateDB(); // Ajout questions
 
     }
 }

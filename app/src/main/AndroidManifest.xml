@@ -35,30 +35,42 @@
         </activity>
         <activity
             android:name=".ListeDisciplines"
-            android:label="Disciplines" />
+            android:label="Disciplines"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ExercicesMaths"
-            android:label="Mathématiques" />
+            android:label="Mathématiques"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MathsMultiplications"
-            android:label="Multiplications" />
+            android:label="Multiplications"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ExercicesCultureG"
-            android:label="Culture générale" />
+            android:label="Culture générale"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MathsMultiplicationOpt"
-            android:label="Multiplications" />
+            android:label="Multiplications"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MathsAdditions"
-            android:label="Additions" />
+            android:label="Additions"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CultGQCMOpt"
-            android:label="Domaine - QCM" />
-        <activity android:name=".CultGQcm" />
+            android:label="Domaine - QCM"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CultGQcm"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChoisirUser"
-            android:label="Choisir un compte" />
-        <activity android:name=".CreerCompte"></activity>
+            android:label="Choisir un compte"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreerCompte"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
