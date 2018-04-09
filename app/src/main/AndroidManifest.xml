@@ -71,6 +71,10 @@
         <activity
             android:name=".CreerCompte"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".Scores"
+            android:label="Mes scores"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

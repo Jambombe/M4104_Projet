@@ -46,6 +46,15 @@
         android:layout_alignBottom="@+id/activity_liste_disciplines_cultGBtn"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:id="@+id/activity_liste_disciplines_showScores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="Voir mes scores"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>
 

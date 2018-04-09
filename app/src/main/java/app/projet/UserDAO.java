@@ -1,5 +1,6 @@
 package app.projet;
 
+
 import java.util.List;
 
 public class UserDAO {
@@ -8,8 +9,7 @@ public class UserDAO {
         return User.listAll(User.class);
     }
 
-    public static void updateDB() {
-//        User u = new User("Je suis", "le test", "image");
-//        u.save();
+    public static User getUserFromId(int id){
+        return User.findById(User.class, id);
     }
 }

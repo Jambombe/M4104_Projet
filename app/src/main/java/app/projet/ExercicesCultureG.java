@@ -14,15 +14,7 @@ public class ExercicesCultureG extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercices_culture_g);
 
-
-
-
-
-
-
-
-
-
+        final int userID = getIntent().getExtras().getInt(MainActivity.MAIN_ACTIVITY_USERID);
 
 
         Button qcmBtn = (Button) findViewById(R.id.activity_exercices_cultureG_QCM);
@@ -30,6 +22,7 @@ public class ExercicesCultureG extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent qcmAct = new Intent(ExercicesCultureG.this, CultGQCMOpt.class);
+                qcmAct.putExtra(MainActivity.MAIN_ACTIVITY_USERID, userID);
 
                 startActivity(qcmAct);
             }

@@ -13,6 +13,9 @@ import android.content.Intent;
 
 public class MathsMultiplications extends AppCompatActivity {
 
+    boolean exerciceTermine = false;
+    final EditText[] tabEditText = new EditText[11];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +26,7 @@ public class MathsMultiplications extends AppCompatActivity {
 
         TableLayout table = (TableLayout) findViewById(R.id.mathsMult_table_layout);
 
-        final EditText[] tabEditText = new EditText[11];
-
+        // Creation des lignes
         for (int i = 1; i <= 10; i++){
 
             // Creation d'une nouvelle ligne
@@ -48,28 +50,45 @@ public class MathsMultiplications extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean toutJuste = true;
-                for (int i = 1; i < 10; i++) {
-                    if (numTable * i != Integer.parseInt(tabEditText[i].getText().toString())){
-                        toutJuste = false;
-                        break;
-                    }
+
+                if (! exerciceTermine){
+                    verifierReponses(numTable);
+                    Button valider = (Button) findViewById(R.id.mathsMult_validerBtn);
+                    valider.setText("Terminer");
+                    exerciceTermine = true;
+                } else {
+                    setResult(RESULT_OK);
+                    MathsMultiplications.super.finish();
                 }
 
-//                if (toutJuste){ // Toutes les réponses sont JUSTES, on envoie vers l'actibity Felicitation
-//
-//                    Intent act_Felcicitations = new Intent(MathsMultiplications.this, FelicitationActivity.class);
-//                    startActivity(act_Felcicitations);
-//
-//                } else {
-//
-//                    Intent act_Erreur = new Intent(MathsMultiplications.this, ErreurActivity.class);
-//                    startActivity(act_Erreur);
-//
-//                }
             }
         });
 
 
+    }
+
+    /**
+     * Vérifie les réponses données et renvoie le score effectué
+     * @return score : nombre de réponses correctes
+     */
+    public void verifierReponses(int numTable){
+
+        int score = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            if (numTable * i == Integer.parseInt(tabEditText[i].getText().toString())){
+                score++;
+            }
+        }
+
+        final int userID = getIntent().getExtras().getInt(MainActivity.MAIN_ACTIVITY_USERID);
+        if (userID != User.ID_INVITE){
+            UserDAO.getUserFromId(userID).setBestScore(Question.ID_MATH_MULT, score); // Sauvegarde du score
+        }
+
+        TextView v = new TextView(this);
+        v.setText("Score : " + score + "/10");
+        TableLayout table = (TableLayout) findViewById(R.id.mathsMult_table_layout);
+        table.addView(v);
     }
 }

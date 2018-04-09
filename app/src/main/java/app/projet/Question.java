@@ -6,6 +6,13 @@ import com.orm.SugarRecord;
 
 public class Question extends SugarRecord{
 
+    // IDs pour identifier l'exercice au travers de l'appli
+    public final static int ID_MATH_ADD = 1;
+    public final static int ID_MATH_MULT = 2;
+    public final static int ID_CG_FR = 3;
+    public final static int ID_CG_GEO = 4;
+    public final static int ID_CG_HIST = 5;
+
     private String ennonce;
     private String reponseCorrecte;
     private String reponseIncorrecte1;

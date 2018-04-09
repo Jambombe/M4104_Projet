@@ -17,6 +17,7 @@ public class MathsAdditions extends AppCompatActivity {
     public int numAddition = 1;
     public int[] reponses = new int[11];
     public EditText[] reponsesDonnees = new EditText[11];
+    public boolean exerciceTermine = false; // True si l'exercice est tertminé, faux sinon
 
 
     @Override
@@ -43,8 +44,14 @@ public class MathsAdditions extends AppCompatActivity {
                     valider.setText("Valider");
                     numAddition++;
                 } else {
-                    verifierReponses();
-                    // Sortie act
+                    if (! exerciceTermine){
+                        verifierReponses();
+                        Button valider = (Button) findViewById(R.id.mathsAdd_validerBtn);
+                        valider.setText("Terminer");
+                        exerciceTermine = true;
+                    } else {
+                        MathsAdditions.super.finish();
+                    }
                 }
             }
         });
@@ -88,17 +95,14 @@ public class MathsAdditions extends AppCompatActivity {
             }
         }
 
+        final int userID = getIntent().getExtras().getInt(MainActivity.MAIN_ACTIVITY_USERID);
+        if (userID != User.ID_INVITE){
+            UserDAO.getUserFromId(userID).setBestScore(Question.ID_MATH_ADD, score);
+        }
+
         v.setText("Score : " + score + "/10");
         r.addView(v);
         table.addView(r);
-
-
-        try{
-            java.util.concurrent.TimeUnit.SECONDS.sleep(1);
-
-        } catch (Exception e){
-
-        }
 
     }
 

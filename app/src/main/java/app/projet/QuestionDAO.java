@@ -1,5 +1,6 @@
 package app.projet;
 
+import java.util.ArrayList;
 import java.util.List;
 import app.projet.Question.Domaine;
 
@@ -24,31 +25,37 @@ public class QuestionDAO {
         return Question.findWithQuery(Question.class, "Select * From Question where domaine = ?", d.toString());
     }
 
+    /**
+     * Retourn nbQuestions du domaine d
+     * @param d Domaine recherché
+     * @param nbQuestions Nombre de questions voulues
+     * @return List<Question> contenant nbQuestions questions du domaine d
+     */
     public static List<Question> questionsFromDomaine(Domaine d, int nbQuestions){
         List<Question> q = questionsFromDomaine(d); // Recuperer toutes les questions du domaine
 
-//        if (q.size() < nbQuestions){
-//            throw new ArrayIndexOutOfBoundsException();
-//        }
+        if (q.size() < nbQuestions){ // Si trop de questions sont demandées, on retourne le max possible
+            nbQuestions = q.size();
+        }
 
         shuffle(q); // Melanger les questions
-//        List<Question> q1 = new ArrayList<>();
-//
-//        for (int i = 0; i < nbQuestions; i++){ // Recuperer les nbQuestions premières quesions de la liste
-//            q1.add(q.get(i));
-//        }
+        List<Question> q1 = new ArrayList<>();
+
+        for (int i = 0; i < nbQuestions; i++){ // Recuperer les nbQuestions premières quesions de la liste
+            q1.add(q.get(i));
+        }
 
         return q;
     }
 
     /**
-     * Met à jour la DB :
+     * Met à jour la BD :
      *  - Si elle est vide, insert les éléments
      *  - Sinon ne fait rien
      */
     public static void updateDB(){
-//        List<Question> q = QuestionDAO.allQuestions();
-//        if (! q.isEmpty()){
+        List<Question> q = QuestionDAO.allQuestions();
+        if (q.isEmpty()){
             Question qG1 = new Question("Quelle est la capitale de France ?", "Paris", "Lyon", "Bordeaux", Domaine.GEO);
             Question qG2 = new Question("Quel fleuve traverse Paris ?", "La Seine", "Le Rhône", "L'isère", Domaine.GEO);
             Question qG3 = new Question("Quel pays se trouve en-dessous de la France ?", "L'Espagne", "L'Allemagne", "Le Canada", Domaine.GEO);
@@ -84,7 +91,7 @@ public class QuestionDAO {
             qH3.save();
             qH4.save();
             qH5.save();
-//        }
+        }
     }
 
 

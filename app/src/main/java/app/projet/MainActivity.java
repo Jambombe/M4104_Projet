@@ -14,8 +14,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String MAIN_ACTIVITY_PRENOM = "prenom";
-    public static final String MAIN_ACTIVITY_NOM = "nom";
+    public static final String MAIN_ACTIVITY_USERID = "userID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,26 +47,27 @@ public class MainActivity extends AppCompatActivity {
         connexionInvite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent creerUserAct = new Intent(MainActivity.this, ListeDisciplines.class);
+                Intent listeDisciplines = new Intent(MainActivity.this, ListeDisciplines.class);
+                listeDisciplines.putExtra(MAIN_ACTIVITY_USERID, -1); // l'id de la connexion invité est -1
 
-                startActivity(creerUserAct);
+                startActivity(listeDisciplines);
             }
         });
 
         // Sauvegarde users
-        List<User> u = UserDAO.allUsers();
+//        List<User> u = UserDAO.allUsers();
 
         // Permet de reset la db
-        SugarContext.terminate();
-        SchemaGenerator schemaGenerator = new SchemaGenerator(getApplicationContext());
-        schemaGenerator.deleteTables(new SugarDb(getApplicationContext()).getDB());
-        SugarContext.init(getApplicationContext());
-        schemaGenerator.createDatabase(new SugarDb(getApplicationContext()).getDB());
+//        SugarContext.terminate();
+//        SchemaGenerator schemaGenerator = new SchemaGenerator(getApplicationContext());
+//        schemaGenerator.deleteTables(new SugarDb(getApplicationContext()).getDB());
+//        SugarContext.init(getApplicationContext());
+//        schemaGenerator.createDatabase(new SugarDb(getApplicationContext()).getDB());
 
         // Re-insérer tout les users
-        for (int i = 0; i < u.size(); i++){
-            u.get(i).save();
-        }
+//        for (int i = 0; i < u.size(); i++){
+//            u.get(i).save();
+//        }
 
         QuestionDAO.updateDB(); // Ajout questions
 
